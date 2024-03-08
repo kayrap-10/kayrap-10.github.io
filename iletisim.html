@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>İletişim | Kayra Payzun</title>
+  </head>
+  <body>
+    <div class="content">
+      <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Kayra Payzun</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Kayra Payzun</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Kapat"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" 
+                    aria-current="page" 
+                    href="http://kayrapayzun.com.tr/">Anasayfa</a>
+                <li class="nav-item">
+                  <a class="nav-link active" 
+                    aria-current="page" 
+                    href="http://kayrapayzun.com.tr/iletisim">İletişim</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" aria-current="page" href="#">Gönderiler (Yakında)</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Diğer sayfalar
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" 
+                      href="http://kayrapayzun.com.tr/deprem">Türkiyedeki son 
+                      depremler</a>
+                    </li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item disabled" href="#">Geliştiriciler için apiler (Yakında)</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <br>
+      <br>
+      <h1 style="color: white; font-family: "Montserrat", sans-serif; text-align: center;">Bana aşağıdaki bilgilerden ulaşabilirsiniz.</h1>
+      <br>
+      <br>
+      <button class="btn btn-light ig" type="button" onclick="igSwal()"><i class="bi-instagram"></i> İnstagram</button><br><br><br>
+      <button class="btn btn-light" type="button" onclick="emailSwal()"><i style="color: black;" class="bi bi-envelope"></i> E-mail</button>
+    </div>
+  </body>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script 
+    src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+    body {
+    background-color: #313942;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    }
+    .content {
+    z-index: 0;
+    position: relative; 
+    padding-top: 100px;
+    }
+    .ig {
+    i {
+    color: #DF3796;
+    font-size: 20px;
+    padding-right: 10px;
+    transition: all .3s ease-in-out;
+    }
+    color: #C71E7E;
+    font-family: "Roboto", sans-serif;
+    align-self: center;
+    transform: translateX(0px);
+    transition: all .1s ease-in-out;
+    }
+  </style>
+  <script>
+    function igSwal() {
+    Swal.fire({
+     title: "Yönlendiriliyorsun",
+     text: "2 saniye sonra yönlendirileceksiniz.",
+     icon: "info",
+     timer: 2000,
+     showConfirmButton: false,
+    }).then(() => {
+     window.location.href = "https://instagram.com/kayra_payzun";
+    });
+    }
+    function emailSwal() {
+    Swal.fire({
+     title: "Yönlendiriliyorsun",
+     text: "2 saniye sonra yönlendirileceksiniz.",
+     icon: "info",
+     timer: 2000,
+     showConfirmButton: false,
+    }).then(() => {
+     window.location.href = "mailto:contact@kayrapayzun.com.tr?subject=İletişim%20|%20Site&body=BURAYA%20MESAJINI%20YAZ";
+    });
+    }
+  </script>
+</html>
