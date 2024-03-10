@@ -7,7 +7,12 @@
   </head>
 <body>
 
-<div class="flex h-screen flex-col justify-between border-e bg-white">
+<button id="sidebar-toggle" data-toggle="collapse" data-target="#sidebar">
+  <span class="sr-only">Toggle sidebar</span>
+  <i class="fa fa-bars"></i>
+</button>
+
+<div class="sidebar flex h-screen flex-col justify-between border-e bg-white" style="display: none;">
   <div class="px-4 py-6">
     <span class="grid h-10 w-32 place-content-center rounded-lg bg-gray-100 text-xs text-gray-600">
       Logo
@@ -165,4 +170,13 @@
 
   
 </body>
+<style>
+#sidebar.collapse.show {
+  display: block;
+}
+
+#sidebar-toggle.collapsed {
+  background-image: url('x-icon.png');
+}
+</style>
 </html>
