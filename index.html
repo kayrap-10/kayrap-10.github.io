@@ -229,10 +229,6 @@ height="200" style="display: block; margin-left: auto; margin-right: auto;">
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
   </body>
   <script>
-   tailwind.config = {
-        prefix: "tw-"
-    }
-
     $(window).on('load',function(){
      setTimeout(function(){ 
      	  $('.loader').fadeOut('slow');
@@ -283,5 +279,10 @@ setTimeout(function(){
     typingEffect();
     console.log('Yazı işlemi başlatılıyor... -KAYRA PAYZUN');
 },3500);
+  </script>
+  <script>
+    tailwind.config = {
+        prefix: "tw-"
+    }
   </script>
 </html>
