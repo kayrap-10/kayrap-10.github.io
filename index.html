@@ -113,10 +113,10 @@ height="200" style="display: block; margin-left: auto; margin-right: auto;">
     </div>
     </div>
     <footer class="bg-gray-100">
-  <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+  <div class="tx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
     <div class="flex justify-center text-teal-600">
     </div>
-    <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
+    <p class="tx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
       Bu site, Kayra Payzun tarafından yazılmış ve geliştirilmiştir ek olarak hala geliştirme aşamasındadır.
       Bu sitenin geliştirilmesi için HTML, CSS, Javascript, Bootstrap ve Tailwind CSS kullanılmıştır.<br>
       &copy; 2024 Kayra Payzun
@@ -229,6 +229,9 @@ height="200" style="display: block; margin-left: auto; margin-right: auto;">
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
   </body>
   <script>
+   tailwind.config = {
+        prefix: "tw-"
+    }
 
     $(window).on('load',function(){
      setTimeout(function(){ 
