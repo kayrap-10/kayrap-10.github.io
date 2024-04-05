@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sınav Notları</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    body {
+        font-family: Montserrat, sans-serif;
+        margin: 50px;
+    }
+    .input-container {
+        margin-bottom: 20px;
+    }
+    .input-container label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .input-container input {
+        width: 100%;
+        padding: 5px;
+    }
+    #sonuc {
+        margin-top: 20px;
+        font-weight: bold;
+        color: black;
+    }
+    .error-message {
+        color: red;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="input-container">
+                    <label for="okuma-yazma">Okuma-Yazma Sınavı Notu:</label>
+                    <input type="text" id="okuma-yazma" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,''); if(this.value > 100) this.value = 100; hesapla()">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="input-container">
+                    <label for="dinleme">Dinleme Sınavı Notu:</label>
+                    <input type="text" id="dinleme" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,''); if(this.value > 100) this.value = 100; hesapla()">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="input-container">
+                    <label for="konuşma">Konuşma Sınavı Notu:</label>
+                    <input type="text" id="konuşma" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,''); if(this.value > 100) this.value = 100; hesapla()">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="sonuc"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function hesapla() {
+            let okumaYazmaNotu = document.getElementById('okuma-yazma').value;
+            let dinlemeNotu = document.getElementById('dinleme').value;
+            let konuşmaNotu = document.getElementById('konuşma').value;
+
+            if (okumaYazmaNotu === '' || dinlemeNotu === '' || konuşmaNotu === '') {
+                const sonucDiv = document.getElementById('sonuc');
+                sonucDiv.classList.add('error-message');
+                sonucDiv.textContent = 'Lütfen tüm alanları doldurun.';
+                return;
+            }
+
+            let toplamNot = 0;
+            if (!isNaN(okumaYazmaNotu)) {
+                toplamNot += parseFloat(okumaYazmaNotu) * 0.5;
+            }
+            if (!isNaN(dinlemeNotu)) {
+                toplamNot += parseFloat(dinlemeNotu) * 0.25;
+            }
+            if (!isNaN(konuşmaNotu)) {
+                toplamNot += parseFloat(konuşmaNotu) * 0.25;
+            }
+
+            const sonucDiv = document.getElementById('sonuc');
+            sonucDiv.classList.remove('error-message');
+            sonucDiv.textContent = `Toplam Not: ${Math.round(toplamNot)}`;
+        }
+    </script>
+</body>
+</html>
