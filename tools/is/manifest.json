@@ -1,0 +1,15 @@
+{
+  "name": "KDV Hesaplayıcı",
+  "short_name": "KDVH",
+  "start_url": "https://kayrapayzun.com.tr/tools/is/kdv",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "kdv.png",
+      "sizes": "1280x1280",
+      "type": "image/png"
+    }
+  ]
+}
