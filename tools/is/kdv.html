@@ -36,6 +36,7 @@
         margin-top: 20px;
         font-weight: bold;
         color: black;
+        text-align: center;
     }
 </style>
 </head>
@@ -67,19 +68,23 @@
                 <div id="sonuc"></div>
             </div>
         </div>
+        <div id="kdv-orani-group">
+          <a href="https://kayrapayzun.com.tr/tools/is/kdvsiz" type="button" class="btn btn-primary" style>KDVsiz fiyat hesaplayıcıyı aç</a>
+        </div>
     </div>
 
     <script>
-        function hesapla() {
-            let kdvsizFiyat = parseFloat(document.getElementById('kdvsiz-fiyat').value) || 0;
-            let kdvOrani = parseFloat(document.getElementById('kdv-orani').value) || 0;
+function hesapla() {
+    let kdvsizFiyat = parseFloat(document.getElementById('kdvsiz-fiyat').value) || 0;
+    let kdvOrani = parseFloat(document.getElementById('kdv-orani').value) || 0;
 
-            let kdvMiktari = kdvsizFiyat * (kdvOrani / 100);
-            let toplamFiyat = kdvsizFiyat + kdvMiktari;
+    let kdvMiktari = kdvsizFiyat * (kdvOrani / 100);
+    let toplamFiyat = kdvsizFiyat + kdvMiktari;
 
-            const sonucDiv = document.getElementById('sonuc');
-            sonucDiv.textContent = `KDV Miktarı: ${kdvMiktari.toFixed(2)} ₺ | Toplam Fiyat: ${toplamFiyat.toFixed(2)} ₺`;
-        }
+    const sonucDiv = document.getElementById('sonuc');
+    sonucDiv.innerHTML = `<span>KDV Oranı: %${kdvOrani}<br>KDV Miktarı: ${kdvMiktari.toFixed(2)}<br> Toplam Fiyat: ${toplamFiyat.toFixed(2)} </span>`;
+}
+
 
         function setKDVOrani(orani) {
             document.getElementById('kdv-orani').value = orani;
