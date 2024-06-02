@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ev teslimine kalan gün</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: #c2e9ff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-family: 'Roboto', serif;
+            text-align: center;
+        }
+        #daysRemaining {
+            font-size: 10rem;
+        }
+    </style>
+    <script>
+        function calculateDays() {
+            const targetDate = new Date('2026-05-12');
+            const currentDate = new Date();
+            const timeDifference = targetDate - currentDate;
+            const daysDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+            document.getElementById('daysRemaining').innerText = daysDifference;
+        }
+        window.onload = calculateDays;
+    </script>
+</head>
+<body>
+    <div>
+        <h1 class="text-5xl font-bold mb-8">12/5/2026 tarihine kalan gün:</h1>
+        <p id="daysRemaining" class="font-extrabold"></p>
+    </div>
+</body>
+</html>
